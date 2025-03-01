@@ -13,7 +13,7 @@
 */
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Formning default submit harakatini to'xtatish
+    event.preventDefault();
     
     const message = document.getElementById("message").value;
     const ism = document.getElementById("ism").value;
