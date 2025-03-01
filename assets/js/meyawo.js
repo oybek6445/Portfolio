@@ -12,7 +12,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-let id = 1;
+let id = 0;
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
     
