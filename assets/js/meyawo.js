@@ -12,6 +12,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+let id = 1;
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
     
@@ -22,7 +23,22 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     console.log("Ism:", ism);
     console.log("Email:", email);
     console.log("Xabar:", message);
+
+    fetch("https://3c63-94-230-230-173.ngrok-free.app/api/post", {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            Ism: ism,
+            email: email,
+            xabar: message,
+            id: ++id
+        })
+    })
+    .then(response => response.json()) 
+    // .then(data => console.log('Server javobi:', data))
+    // .catch(error => console.error('Xatolik:', error));
 });
+
 
 // smooth scroll
 $(document).ready(function(){
